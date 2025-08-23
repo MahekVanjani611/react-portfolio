@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Linkedin, Github, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Linkedin, Github } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -17,6 +17,10 @@ const Contact = ({ id, contactData = {} }) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Google Apps Script URL
+  const scriptURL =
+    "https://script.google.com/macros/s/AKfycbyp35fPsEGLPqcGAvomzm2Z_L-smczsSQflW1KxDCWshI9-TXed6wRQCH9XTdWlX0H4Rg/exec";
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -25,20 +29,47 @@ const Contact = ({ id, contactData = {} }) => {
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    // Mock form submission
-    setTimeout(() => {
+  try {
+    const formBody = new FormData();
+    Object.entries(formData).forEach(([key, value]) => {
+      formBody.append(key, value);
+    });
+
+    const response = await fetch(scriptURL, {
+      method: "POST",
+      body: formBody,
+    });
+
+    const result = await response.json();
+    console.log("Response from Google Apps Script:", result);
+
+    if (result?.result === "success") {
       toast({
         title: "Message Sent!",
         description: "Thanks for reaching out. I'll get back to you soon!",
       });
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setIsSubmitting(false);
-    }, 1000);
-  };
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } else {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    }
+  } catch (error) {
+    toast({
+      title: "Error",
+      description: error.message,
+      variant: "destructive",
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   // Social buttons config
   const socialIcons = {
