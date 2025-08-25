@@ -12,6 +12,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.experience-logo img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 html, body {
   width: 100vw;
   min-height: 100vh;

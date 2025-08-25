@@ -20,6 +20,7 @@ export const mockData = {
 
   // Internship Experience
   experience: {
+      // image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Ftechnology.desktopnexus.com%2Fwallpaper%2F293488%2F&psig=AOvVaw0tJVL63ezY5dVEfKbqxbCu&ust=1756062156328000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCMCUrLrPoY8DFQAAAAAdAAAAABAK",
       company: "NVIDIA",
       position: "System Software Engineer Intern",
       duration: "Summer 2025",
@@ -36,54 +37,42 @@ export const mockData = {
 
  // Selected Technical Projects
   projects: [
-    {
+            {
       id: 1,
-      title: "Efficient Computations on ML Accelerators",
-      description: "Enhanced a Vision Transformer (ViT) model, reducing computation cycles from 7 to 3 via algorithm-level optimizations.",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02c9a",
-      technologies: ["Verilog", "RTL", "Pynq-Z2", "Kintex-7", "Transformers"],
-      githubUrl: "https://github.com/yourusername/ml-accelerator",
-      liveUrl: "",
-      highlights: ["Optimized RTL design", "Algorithm-level optimizations", "Large speedups on FPGA boards"]
+      title: "Open Source-GirlScript Summer of Code",
+      description: "Contributed to the GirlScript Summer of Code project by adding different features and fixing bugs.",
+      image: "/unnamed (2).jpg",
+      technologies: ["HTML","CSS","React","JavaScript","Node.js","Express.js","MongoDB"],
+      githubUrl: "https://github.com/MahekVanjani611/",
+      highlights: ["Full-stack implementation"]
     },
-    {
-      id: 1,
-      title: "Efficient Computations on ML Accelerators",
-      description: "Enhanced a Vision Transformer (ViT) model, reducing computation cycles from 7 to 3 via algorithm-level optimizations.",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02c9a",
-      technologies: ["Verilog", "RTL", "Pynq-Z2", "Kintex-7", "Transformers"],
-      githubUrl: "https://github.com/yourusername/ml-accelerator",
-      liveUrl: "",
-      highlights: ["Optimized RTL design", "Algorithm-level optimizations", "Large speedups on FPGA boards"]
-    },
-    {
-      id: 1,
-      title: "Efficient Computations on ML Accelerators",
-      description: "Enhanced a Vision Transformer (ViT) model, reducing computation cycles from 7 to 3 via algorithm-level optimizations.",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02c9a",
-      technologies: ["Verilog", "RTL", "Pynq-Z2", "Kintex-7", "Transformers"],
-      githubUrl: "https://github.com/yourusername/ml-accelerator",
-      liveUrl: "",
-      highlights: ["Optimized RTL design", "Algorithm-level optimizations", "Large speedups on FPGA boards"]
-    },
-    {
+        {
       id: 2,
-      title: "Chat E-Library Bot",
-      description: "RAG-powered chatbot to manage digital resources, improving query accuracy and user experience.",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe603dbe23",
-      technologies: ["Hugging Face", "LangChain", "React", "TailwindCSS"],
-      githubUrl: "https://github.com/yourusername/chat-elibrary-bot",
-      liveUrl: "",
-      highlights: ["RAG pipeline", "Improved UX", "Wireframes for UI"]
+      title: "Project Recommendation System",
+      description: "Developed a recommendation system using content-based filtering to suggest projects based on user preferences.",
+      image: "/unnamed (1).jpg",
+      technologies: ["Python", "Scikit-learn", "Pandas", "NumPy","MongoDB","React"],
+      githubUrl: "https://github.com/MahekVanjani611/Project_Recommendation",
+      highlights: ["Content-based filtering", "User preference analysis", "Full-stack implementation"]
     },
     {
       id: 3,
+      title: "Efficient Computations on ML Accelerators",
+      description: "Enhanced a Vision Transformer (ViT) model, reducing computation cycles from 7 to 3 via algorithm-level optimizations.",
+      image: "/Canva-AI-artificial-intelligence.jpg",
+      technologies: ["Verilog", "RTL", "Pynq-Z2", "Kintex-7", "Transformers"],
+      githubUrl: "https://github.com/MahekVanjani611/FPGA_ML_Accelerator",
+      highlights: ["Optimized RTL design", "Algorithm-level optimizations", "Large speedups on FPGA boards"]
+    },
+
+    {
+      id: 4,
       title: "Sentiment Classification (IIT Jodhpur)",
       description: "Performed EDA and built multiple NLP pipelines for sentiment classification.",
-      image: "https://images.unsplash.com/photo-1461749280684-dccb63038d34",
+      image: "/unnamed.jpg",
       technologies: ["Python", "Scikit-learn", "NLP", "EDA"],
-      githubUrl: "https://github.com/yourusername/sentiment-classification",
-      liveUrl: "",
+      githubUrl: "https://github.com/MahekVanjani611/PRML_Sentiment-Classification",
+      liveUrl: "https://prml-web-page-seven.vercel.app/",
       highlights: ["84% accuracy", "Tuned Random Forest & Logistic Regression", "Data-driven insights"]
     }
   ],

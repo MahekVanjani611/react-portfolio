@@ -17,6 +17,7 @@ const Experience = ({ id, experienceData }) => {
             <CardHeader>
               <div className="experience-header">
                 <div className="experience-main">
+                  
                   <CardTitle className="experience-title">
                     {experienceData.position}
                   </CardTitle>
