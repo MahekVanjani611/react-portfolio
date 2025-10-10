@@ -5,7 +5,6 @@ export const mockData = {
     title: "Software Developer",
     tagline: "Crafting digital solutions with clean code and innovative thinking",
     email: "b22ee088@iitj.ac.in",
-    phone: "+91 9512080717",
     location: "Gujarat, India",
     linkedin: "https://www.linkedin.com/in/mahek-vanjani-93477a253/",
     github: "https://github.com/MahekVanjani611",
@@ -14,7 +13,7 @@ export const mockData = {
 
   // About/Resume Summary
   about: {
-    summary: "Passionate software developer with expertise in modern web technologies and a strong focus on user experience and performance.",
+    summary: "Passionate software developer with hands-on experience in full-stack web development, Linux kernel optimizations, and machine learning. Skilled in C++, Node.js, React, and Python, with a strong foundation in algorithms, data structures, and system design. Experienced in delivering high-performance, scalable solutions through innovative approaches. Actively contributing to impactful projects while blending creativity with technical expertise. Committed to crafting digital experiences that solve real-world problems efficiently.",
     resumeUrl: "/MahekCV4.pdf"
   },
 
@@ -80,11 +79,11 @@ export const mockData = {
 
   // Skills
 skills: {
-  frontend: ["React.js", "JavaScript (ES6+)", "HTML5", "CSS3", "TailwindCSS"],
+  frontend: ["React.js", "JavaScript", "HTML5", "CSS3", "TailwindCSS"],
   backend: ["Node.js", "Express.js", "Python", "C/C++", "Java"],
   database: ["MongoDB", "SQL"],
   hardware: ["Verilog", "MATLAB"],
-  tools: ["Git", "Docker", "Kubernetes", "Netlify", "VS Code", "Excel"],
+  tools: ["Git", "Docker", "Kubernetes", "Excel"],
   libraries: ["PyTorch", "TensorFlow", "Pandas", "NumPy"],
   concepts: [
     "Machine Learning",
@@ -92,8 +91,9 @@ skills: {
     "Neural Networks",
     "Database Management Systems",
     "Software Systems",
-    "CI/CD",
-    "Responsive Design"
+    "Data Structures & Algorithms",
+    "Object-Oriented Programming",
+    "Operating Systems"
   ]
 }
 ,
@@ -101,7 +101,6 @@ skills: {
   // Contact
   contact: {
     email: "b22ee088@iitj.ac.in",
-    phone: "+91 9512080717",
     location: "Gujarat, India",
     availability: "Available for full-time positions starting July 2026",
     social: {

@@ -1,11 +1,13 @@
+
 import React from 'react';
 import { Download, MapPin, Mail, Phone } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import profileImg from '../assets/Mahek.jpg';
+
 const About = ({ id, aboutData, personalData }) => {
   const handleResumeDownload = () => {
-    // Mock download functionality
+    // Optional: custom download logic
     console.log('Downloading resume...');
     alert('Resume download started! (This is a demo)');
   };
@@ -18,53 +20,50 @@ const About = ({ id, aboutData, personalData }) => {
           <div className="section-divider"></div>
         </div>
 
-        <div className="about-content">
-          <div className="about-text">
+        <div className="about-content flex flex-col md:flex-row gap-8">
+          {/* Text Card */}
+          <div className="about-text md:w-1/2">
             <Card className="about-card">
               <CardHeader>
-                <CardTitle className="about-card-title">Who I Am</CardTitle>
+                {/* <CardTitle className="about-card-title">Who I Am</CardTitle> */}
               </CardHeader>
               <CardContent>
-                <p className="about-description">{aboutData.summary}</p>
-                
-                <div className="about-details">
-                  <div className="detail-item">
+                <p className="about-description text-left">{aboutData.summary}</p>
+
+                <div className="about-details flex flex-col gap-2 mt-4">
+                  <div className="detail-item flex  gap-2">
                     <MapPin size={18} />
                     <span>{personalData.location}</span>
                   </div>
-                  <div className="detail-item">
+                  <div className="detail-item flex gap-2">
                     <Mail size={18} />
                     <span>{personalData.email}</span>
                   </div>
-                  <div className="detail-item">
-                    <Phone size={18} />
-                    <span>{personalData.phone}</span>
-                  </div>
+                 
                 </div>
 
-               <a
-  href={aboutData.resumeUrl}
-  className="btn-primary resume-btn"
-  download
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <Download size={18} />
-  Download Resume
-</a>
+                <div className="mt-4">
+                  <Button
+                    onClick={handleResumeDownload}
+                    className="btn-primary flex  gap-2"
+                    aria-label="Download Resume"
+                  >
+                    <Download size={18} />
+                    Download Resume
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>
 
-          <div className="about-image">
-            <div className="profile-image-container">
-              <div className="profile-image-placeholder">
-                           <img
+          {/* Profile Image */}
+          <div className="about-image md:w-1/2 flex justify-center ">
+            <div className="profile-image-container rounded-full overflow-hidden shadow-lg">
+              <img
                 src={profileImg}
-                alt={personalData.name}
-                className="profile-image"
+                alt={`Profile of ${personalData.name}`}
+                className="profile-image w-full h-auto object-cover"
               />
-              </div>
             </div>
           </div>
         </div>
@@ -72,4 +71,5 @@ const About = ({ id, aboutData, personalData }) => {
     </section>
   );
 };
+
 export default About;

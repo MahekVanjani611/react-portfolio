@@ -104,15 +104,15 @@ const handleSubmit = async (e) => {
                     </div>
                   </div>
 
-                  <div className="contact-item">
+                  {/* <div className="contact-item">
                     <Phone className="contact-icon" size={20} />
                     <div>
                       <span className="contact-label">Phone</span>
-                      <a href={`tel:${contactData?.phone || ""}`} className="contact-value">
+                      {/* <a href={`tel:${contactData?.phone || ""}`} className="contact-value">
                         {contactData?.phone || "+91 9512080717"}
-                      </a>
+                      </a> 
                     </div>
-                  </div>
+                  </div> */}
 
                   <div className="contact-item">
                     <MapPin className="contact-icon" size={20} />

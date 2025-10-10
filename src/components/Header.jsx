@@ -1,76 +1,163 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+// import React, { useState, useEffect } from "react";
+// import "./Header.css";
 
-const Header = ({ scrollToSection, activeSection, personalData }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+// const Header = () => {
+//   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+//   const [scrolled, setScrolled] = useState(false);
+//   const [activeLink, setActiveLink] = useState("home");
 
-  const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'contact', label: 'Contact' }
-  ];
+//   // Scroll effect for header
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       if (window.scrollY > 50) setScrolled(true);
+//       else setScrolled(false);
+//     };
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []);
+
+//   const navLinks = [
+//     { name: "Home", href: "#hero" },
+//     { name: "About", href: "#about" },
+//     { name: "Experience", href: "#experience" },
+//     { name: "Projects", href: "#projects" },
+//     { name: "Skills", href: "#skills" },
+//     { name: "Contact", href: "#contact" },
+//   ];
+
+//   const handleLinkClick = (name) => {
+//     setActiveLink(name);
+//     setMobileMenuOpen(false);
+//   };
+
+//   return (
+//     <header className={`header ${scrolled ? "header-scrolled" : ""}`}>
+//       <div className="header-container">
+//         {/* Brand */}
+//         <div className="header-brand">
+//           <a href="#hero" className="brand-name">Mahek Vanjani</a>
+//         </div>
+
+//         {/* Desktop Nav */}
+//         <nav className="desktop-nav">
+//           {navLinks.map((link) => (
+//             <button
+//               key={link.name}
+//               className={`nav-link ${activeLink === link.name ? "nav-link-active" : ""}`}
+//               onClick={() => handleLinkClick(link.name)}
+//             >
+//               {link.name}
+//             </button>
+//           ))}
+//         </nav>
+
+//         {/* Mobile Menu Button */}
+//         <button
+//           className="mobile-menu-button"
+//           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+//         >
+//           {mobileMenuOpen ? "✕" : "☰"}
+//         </button>
+
+//         {/* Mobile Nav */}
+//         <nav className={`mobile-nav ${mobileMenuOpen ? "active" : ""}`}>
+//           {navLinks.map((link) => (
+//             <button
+//               key={link.name}
+//               className={`mobile-nav-link ${activeLink === link.name ? "mobile-nav-link-active" : ""}`}
+//               onClick={() => handleLinkClick(link.name)}
+//             >
+//               {link.name}
+//             </button>
+//           ))}
+//         </nav>
+//       </div>
+//     </header>
+//   );
+// };
+
+// export default Header;
+
+
+import React, { useState, useEffect } from "react";
+import "./Header.css";
+
+const Header = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeLink, setActiveLink] = useState("Home"); // Capitalized names
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (sectionId) => {
-    scrollToSection(sectionId);
-    setIsMenuOpen(false);
+  const navLinks = [
+    { name: "Home", href: "#hero" },
+    { name: "About", href: "#about" },
+    { name: "Experience", href: "#experience" },
+    { name: "Projects", href: "#projects" },
+    { name: "Skills", href: "#skills" },
+    { name: "Contact", href: "#contact" },
+  ];
+
+  const handleLinkClick = (name, href) => {
+    setActiveLink(name);
+    setMobileMenuOpen(false);
+
+    // Smooth scroll
+    const section = document.querySelector(href);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
-    <header className={`header ${isScrolled ? 'header-scrolled' : ''}`}>
+    <header className={`header ${scrolled ? "header-scrolled" : ""}`}>
       <div className="header-container">
         <div className="header-brand">
-          <h2 className="brand-name">{personalData.name}</h2>
+          <a href="#hero" className="brand-name">Mahek Vanjani</a>
         </div>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Nav */}
         <nav className="desktop-nav">
-          {navItems.map((item) => (
+          {navLinks.map((link) => (
             <button
-              key={item.id}
-              onClick={() => handleNavClick(item.id)}
-              className={`nav-link ${activeSection === item.id ? 'nav-link-active' : ''}`}
+              key={link.name}
+              className={`nav-link ${activeLink === link.name ? "nav-link-active" : ""}`}
+              onClick={() => handleLinkClick(link.name, link.href)}
             >
-              {item.label}
+              {link.name}
             </button>
           ))}
         </nav>
 
-        {/* Mobile Menu Button */}
-        <button 
+        {/* Mobile Toggle */}
+        <button
           className="mobile-menu-button"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {mobileMenuOpen ? "✕" : "☰"}
         </button>
-      </div>
 
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <nav className="mobile-nav">
-          {navItems.map((item) => (
+        {/* Mobile Nav */}
+        <nav className={`mobile-nav ${mobileMenuOpen ? "active" : ""}`}>
+          {navLinks.map((link) => (
             <button
-              key={item.id}
-              onClick={() => handleNavClick(item.id)}
-              className={`mobile-nav-link ${activeSection === item.id ? 'mobile-nav-link-active' : ''}`}
+              key={link.name}
+              className={`mobile-nav-link ${activeLink === link.name ? "mobile-nav-link-active" : ""}`}
+              onClick={() => handleLinkClick(link.name, link.href)}
             >
-              {item.label}
+              {link.name}
             </button>
           ))}
         </nav>
-      )}
+      </div>
     </header>
   );
 };
+
 export default Header;
