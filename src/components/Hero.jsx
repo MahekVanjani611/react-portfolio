@@ -20,7 +20,7 @@ const Hero = ({ id, personalData, scrollToSection }) => {
     "/* Passionate about building efficient, scalable systems */",
     "const expertise = ['C++', 'Node.js', 'React', 'Deep Learning'];",
     "function solveComplexProblems() { return 'joy'; }",
-    "// Member - Career Development Cell & Product Club, IIT Jodhpur ",
+    "// Member - Product Club, IIT Jodhpur ",
     "/* I love blending technology with creativity */",
     "while (learning) { grow(); innovate(); }",
     "return 'Turning ideas into impactful solutions ';"
