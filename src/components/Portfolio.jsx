@@ -11,7 +11,10 @@ import { mockData } from '../data/mock';
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
-
+    const allProjects = [
+    ...(mockData.projectsWithDemo || []),
+    ...(mockData.projectsWithoutDemo || [])
+  ];
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -48,7 +51,7 @@ const Portfolio = () => {
         
         <Projects 
           id="projects"
-          projectsData={mockData.projects}      
+          projectsData={mockData.projectsData}      
     />      
         <Skills 
           id="skills"
@@ -69,4 +72,3 @@ const Portfolio = () => {
 }
 
 export default Portfolio;
-
