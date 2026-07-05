@@ -3,7 +3,7 @@ import { MapPin, Calendar, CheckCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { useReveal } from '../hooks/useReveal';
-import companyLogo from '../assets/nvidia-logo.svg';
+import companyLogo from '../assets/nvidia-logo.jpg';
 
 const Experience = ({ id, experienceData }) => {
   const [headerRef, headerVisible] = useReveal();
