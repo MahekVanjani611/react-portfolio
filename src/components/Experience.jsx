@@ -3,6 +3,7 @@ import { MapPin, Calendar, CheckCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { useReveal } from '../hooks/useReveal';
+import companyLogo from '../assets/nvidia-logo.svg';
 
 const Experience = ({ id, experienceData }) => {
   const [headerRef, headerVisible] = useReveal();
@@ -21,13 +22,21 @@ const Experience = ({ id, experienceData }) => {
             <CardHeader>
               <div className="experience-header">
                 <div className="experience-main">
-                  
-                  <CardTitle className="experience-title">
-                    {experienceData.position}
-                  </CardTitle>
-                  <h3 className="experience-company">
-                    {experienceData.company}
-                  </h3>
+                  <div className="experience-company-row">
+                    <img
+                      src={companyLogo}
+                      alt={`${experienceData.company} logo`}
+                      className="company-logo"
+                    />
+                    <div>
+                      <CardTitle className="experience-title">
+                        {experienceData.position}
+                      </CardTitle>
+                      <h3 className="experience-company">
+                        {experienceData.company}
+                      </h3>
+                    </div>
+                  </div>
                 </div>
                 <div className="experience-meta">
                   <div className="meta-item">
