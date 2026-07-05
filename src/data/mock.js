@@ -132,20 +132,36 @@ export const mockData = {
   },
 
   // Internship Experience
-  experience: {
-    company: "NVIDIA",
-    position: "System Software Engineer Intern",
-    duration: "Summer 2025",
-    location: "On-site",
-    description:
-      "Worked on Linux device driver performance optimizations for NVIDIA GPUs, applying OOP and software systems expertise.",
-    achievements: [
-      "Resolved NVBug bottlenecks, eliminating FPS drops (up to 30%) and enhancing user experience.",
-      "Refactored a 32,000-node singly linked list into an unrolled list, reducing pointer dereferences 16× and cache misses 94%, lowering traversal latency from 1.6 ms to 0.1 ms.",
-      "Diagnosed and resolved a multithreading race condition, improving driver stability for 1000+ end-users."
-    ],
-    technologies: ["C++", "Linux Kernel", "Data Structures", "Multithreading", "Performance Optimization"]
-  },
+  experience: [
+    {
+      company: "Neural Web",
+      position: "Data Science Intern",
+      duration: "2026",
+      location: "Remote",
+      description:
+        "Worked on AI-powered healthcare solutions, building automation and data pipelines to improve reporting efficiency and clinical decision support.",
+      achievements: [
+        "Delivered AI-powered healthcare solutions using Python and FastAPI, translating client requirements into scalable, data-driven applications.",
+        "Built automation workflows including Text-to-SQL systems and presentation-generation pipelines to improve data accessibility and reporting efficiency.",
+        "Analyzed structured healthcare datasets involving CPT and ICD codes to support clinical decision-making and operational insight."
+      ],
+      technologies: ["Python", "FastAPI", "Text-to-SQL", "Healthcare Data Analysis", "CPT/ICD Coding"]
+    },
+    {
+      company: "NVIDIA",
+      position: "System Software Engineer Intern",
+      duration: "Summer 2025",
+      location: "On-site",
+      description:
+        "Worked on Linux device driver performance optimizations for NVIDIA GPUs, applying OOP and software systems expertise.",
+      achievements: [
+        "Resolved NVBug bottlenecks, eliminating FPS drops (up to 30%) and enhancing user experience.",
+        "Refactored a 32,000-node singly linked list into an unrolled list, reducing pointer dereferences 16× and cache misses 94%, lowering traversal latency from 1.6 ms to 0.1 ms.",
+        "Diagnosed and resolved a multithreading race condition, improving driver stability for 1000+ end-users."
+      ],
+      technologies: ["C++", "Linux Kernel", "Data Structures", "Multithreading", "Performance Optimization"]
+    }
+  ],
 
   projectsData : [
   {

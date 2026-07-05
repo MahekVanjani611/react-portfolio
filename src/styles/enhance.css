@@ -491,6 +491,12 @@ body::after {
   gap: 14px;
 }
 
+.experience-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg, 24px);
+}
+
 .company-logo {
   width: 48px;
   height: 48px;
@@ -501,6 +507,13 @@ body::after {
   border: 1px solid rgba(217, 251, 6, 0.15);
   flex-shrink: 0;
   transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.company-logo-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-primary);
 }
 
 .experience-card:hover .company-logo {
