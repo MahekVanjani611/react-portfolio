@@ -96,7 +96,7 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#hero" },
+    { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
@@ -119,7 +119,7 @@ const Header = () => {
     <header className={`header ${scrolled ? "header-scrolled" : ""}`}>
       <div className="header-container">
         <div className="header-brand">
-          <a href="#hero" className="brand-name">Mahek Vanjani</a>
+          <a href="#home" className="brand-name">Mahek Vanjani</a>
         </div>
 
         {/* Desktop Nav */}

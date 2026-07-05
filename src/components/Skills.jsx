@@ -1,8 +1,12 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
+import { useReveal } from '../hooks/useReveal';
 
 const Skills = ({ id, skillsData }) => {
+  const [headerRef, headerVisible] = useReveal();
+  const [gridRef, gridVisible] = useReveal();
+  const [summaryRef, summaryVisible] = useReveal();
   const skillCategories = [
     {
       title: 'Frontend Development',
@@ -34,7 +38,7 @@ const Skills = ({ id, skillsData }) => {
   return (
     <section id={id} className="skills-section">
       <div className="section-container">
-        <div className="section-header">
+        <div ref={headerRef} className={`section-header reveal ${headerVisible ? 'reveal-visible' : ''}`}>
           <h2 className="section-title">Skills & Technologies</h2>
           <div className="section-divider"></div>
           <p className="section-subtitle">
@@ -42,7 +46,7 @@ const Skills = ({ id, skillsData }) => {
           </p>
         </div>
 
-        <div className="skills-grid">
+        <div ref={gridRef} className={`skills-grid reveal ${gridVisible ? 'reveal-visible' : ''}`}>
           {skillCategories.map((category, index) => (
             <Card key={index} className="skill-category-card">
               <CardHeader>
@@ -69,7 +73,7 @@ const Skills = ({ id, skillsData }) => {
         </div>
 
         {/* Skills Summary */}
-        <div className="skills-summary">
+        <div ref={summaryRef} className={`skills-summary reveal ${summaryVisible ? 'reveal-visible' : ''}`}>
           <Card className="summary-card">
             <CardHeader>
               <CardTitle className="summary-title">Technical Expertise</CardTitle>

@@ -223,9 +223,12 @@ import { ExternalLink, Github, Eye } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
+import { useReveal } from "../hooks/useReveal";
 
 const Projects = ({ id, projectsData }) => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [headerRef, headerVisible] = useReveal();
+  const [gridRef, gridVisible] = useReveal();
 
   const openProjectModal = (project) => setSelectedProject(project);
   const closeProjectModal = () => setSelectedProject(null);
@@ -234,7 +237,7 @@ const Projects = ({ id, projectsData }) => {
     <section id={id} className="projects-section">
       <div className="section-container">
         {/* Header */}
-        <div className="section-header">
+        <div ref={headerRef} className={`section-header reveal ${headerVisible ? 'reveal-visible' : ''}`}>
           <h2 className="section-title">Projects</h2>
           <div className="section-divider"></div>
           <p className="section-subtitle">
@@ -243,7 +246,7 @@ const Projects = ({ id, projectsData }) => {
         </div>
 
         {/* All Projects */}
-        <div className="projects-grid">
+        <div ref={gridRef} className={`projects-grid reveal ${gridVisible ? 'reveal-visible' : ''}`}>
           {projectsData.map((project, index) => (
             <Card key={index} className="project-card">
               <div className="project-image">

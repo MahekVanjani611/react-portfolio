@@ -6,9 +6,12 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Label } from './ui/label';
 import { useToast } from '../hooks/use-toast';
+import { useReveal } from '../hooks/useReveal';
 
 const Contact = ({ id, contactData = {} }) => {
   const { toast } = useToast();
+  const [headerRef, headerVisible] = useReveal();
+  const [contentRef, contentVisible] = useReveal();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -80,12 +83,12 @@ const handleSubmit = async (e) => {
   return (
     <section id={id} className="contact-section">
       <div className="section-container">
-        <div className="section-header">
+        <div ref={headerRef} className={`section-header reveal ${headerVisible ? 'reveal-visible' : ''}`}>
           <h2 className="section-title">Get In Touch</h2>
           <div className="section-divider"></div>
         </div>
 
-        <div className="contact-content">
+        <div ref={contentRef} className={`contact-content reveal ${contentVisible ? 'reveal-visible' : ''}`}>
           {/* Contact Information */}
           <div className="contact-info">
             <Card className="contact-info-card">

@@ -4,8 +4,12 @@ import { Download, MapPin, Mail, Phone } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import profileImg from '../assets/Mahek.jpg';
+import { useReveal } from '../hooks/useReveal';
 
 const About = ({ id, aboutData, personalData }) => {
+  const [headerRef, headerVisible] = useReveal();
+  const [bodyRef, bodyVisible] = useReveal();
+
   const handleResumeDownload = () => {
     // Optional: custom download logic
     console.log('Downloading resume...');
@@ -15,12 +19,12 @@ const About = ({ id, aboutData, personalData }) => {
   return (
     <section id={id} className="about-section">
       <div className="section-container">
-        <div className="section-header">
+        <div ref={headerRef} className={`section-header reveal ${headerVisible ? 'reveal-visible' : ''}`}>
           <h2 className="section-title">About Me</h2>
           <div className="section-divider"></div>
         </div>
 
-        <div className="about-content flex flex-col md:flex-row gap-8">
+        <div ref={bodyRef} className={`about-content flex flex-col md:flex-row gap-8 reveal ${bodyVisible ? 'reveal-visible' : ''}`}>
           {/* Text Card */}
           <div className="about-text md:w-1/2">
             <Card className="about-card">

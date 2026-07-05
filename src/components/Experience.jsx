@@ -2,17 +2,21 @@ import React from 'react';
 import { MapPin, Calendar, CheckCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
+import { useReveal } from '../hooks/useReveal';
 
 const Experience = ({ id, experienceData }) => {
+  const [headerRef, headerVisible] = useReveal();
+  const [bodyRef, bodyVisible] = useReveal();
+
   return (
     <section id={id} className="experience-section">
       <div className="section-container">
-        <div className="section-header">
+        <div ref={headerRef} className={`section-header reveal ${headerVisible ? 'reveal-visible' : ''}`}>
           <h2 className="section-title">Experience</h2>
           <div className="section-divider"></div>
         </div>
 
-        <div className="experience-content">
+        <div ref={bodyRef} className={`experience-content reveal ${bodyVisible ? 'reveal-visible' : ''}`}>
           <Card className="experience-card">
             <CardHeader>
               <div className="experience-header">

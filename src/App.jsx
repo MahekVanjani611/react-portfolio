@@ -1,5 +1,6 @@
 import React from "react";
 import './App.css';
+import './styles/enhance.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Portfolio from "./components/Portfolio";
 
