@@ -4,11 +4,13 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { useReveal } from '../hooks/useReveal';
 import nvidiaLogo from '../assets/nvidia-logo.jpg';
+import neuralLogo from '../assets/neural-logo.jpg';
 
 // Map company name -> logo asset. Add an entry here whenever you drop in
 // a new logo file under src/assets, and the right badge shows automatically.
 const companyLogos = {
   NVIDIA: nvidiaLogo,
+  NEURAL: neuralLogo
 };
 
 const CompanyLogo = ({ company }) => {
