@@ -236,6 +236,20 @@ export const mockData = {
       "Algorithm-level optimizations",
       "Significant speedups on FPGA boards"
     ]
+  },
+  {
+    id: 8,
+    title: "Real-Time BTC/USDT Market Analytics Platform",
+    description:
+      "A real-time streaming analytics system that ingests live BTC/USDT market data from Binance, processes it through Apache Kafka, aggregates it into OHLCV candles, and visualizes it in a live-updating Streamlit dashboard.",
+    techStack: ["Python", "Apache Kafka", "Streamlit", "Plotly", "Docker", "WebSockets"],
+    github: "https://github.com/MahekVanjani611/Realtime_Analysis",
+    image: "/realtime-analysis.svg",
+    highlights: [
+      "End-to-end real-time streaming pipeline (no DB polling)",
+      "Kafka-based OHLCV candle aggregation (1-minute windows)",
+      "Live auto-updating candlestick dashboard"
+    ]
   }
 
 
