@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
+import { ChevronDown, Github, Linkedin, Mail, Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
 import Typed from "typed.js";
 import "../App.css";
@@ -7,6 +7,8 @@ import "../App.css";
 const Hero = ({ id, personalData, scrollToSection }) => {
   const typedEl = useRef(null);
   const typedInstance = useRef(null);
+  const laptopRef = useRef(null);
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
 
   // Laptop typing area dimensions
   const laptopHeight = 260; // height of the screen
@@ -58,13 +60,34 @@ const Hero = ({ id, personalData, scrollToSection }) => {
     };
   }, [profileStrings]);
 
+  // Subtle mouse-driven tilt on the laptop illustration
+  const handleMouseMove = (e) => {
+    const node = laptopRef.current;
+    if (!node) return;
+    const rect = node.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width - 0.5;
+    const py = (e.clientY - rect.top) / rect.height - 0.5;
+    setTilt({ x: py * -8, y: px * 10 });
+  };
+
+  const resetTilt = () => setTilt({ x: 0, y: 0 });
+
   return (
     <section id={id} className="hero-section">
+      <div className="hero-grid-overlay" aria-hidden="true"></div>
+
       <div className="hero-container flex flex-col md:flex-row justify-between items-center">
 
         {/* Left Side */}
         <div className="hero-content md:w-1/2 text-center md:text-left">
-          <h1 className="hero-title">{personalData.name}</h1>
+          <div className="hero-badge">
+            <span className="hero-badge-dot"></span>
+            Open to Software Engineering opportunities
+          </div>
+
+          <h1 className="hero-title">
+            <span className="hero-title-gradient">{personalData.name}</span>
+          </h1>
           <h2 className="hero-subtitle">{personalData.title}</h2>
           <p className="hero-description">{personalData.tagline}</p>
 
@@ -73,6 +96,7 @@ const Hero = ({ id, personalData, scrollToSection }) => {
               className="btn-primary"
               onClick={() => scrollToSection("projects")}
             >
+              <Sparkles size={18} />
               View My Work
             </Button>
             <Button
@@ -115,12 +139,29 @@ const Hero = ({ id, personalData, scrollToSection }) => {
 
         {/* Right Side - Laptop */}
         <div className="hero-right md:w-1/2 flex justify-center items-center mt-10 md:mt-0">
-          <div className="hero-animation relative w-full flex justify-center items-center">
+          <div
+            ref={laptopRef}
+            className="hero-animation relative w-full flex justify-center items-center"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={resetTilt}
+            style={{
+              transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
+            }}
+          >
+            <div className="hero-laptop-glow" aria-hidden="true"></div>
+
+            {/* Floating particles */}
+            <span className="hero-particle hero-particle-1"></span>
+            <span className="hero-particle hero-particle-2"></span>
+            <span className="hero-particle hero-particle-3"></span>
+            <span className="hero-particle hero-particle-4"></span>
+
             <svg
               width="100%"
               height="100%"
               viewBox="0 0 600 400"
               preserveAspectRatio="xMidYMid meet"
+              className="hero-laptop-svg"
             >
               {/* Laptop Screen */}
               <rect
@@ -157,16 +198,6 @@ const Hero = ({ id, personalData, scrollToSection }) => {
                 ></div>
               </foreignObject>
 
-              {/* Blinking Cursor
-              <rect x="530" y="80" width="10" height="25" fill="#D9FB06" opacity="1">
-                <animate
-                  attributeName="opacity"
-                  values="1;0;1"
-                  dur="0.8s"
-                  repeatCount="indefinite"
-                />
-              </rect> */}
-
               {/* Laptop Base */}
               <rect
                 x="40"
@@ -183,13 +214,14 @@ const Hero = ({ id, personalData, scrollToSection }) => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="hero-scroll-indicator mt-15">
+        <div className="hero-scroll-indicator">
           <button
             className="scroll-button"
             onClick={() => scrollToSection("about")}
             aria-label="Scroll Down"
           >
-            <ChevronDown size={24} />
+            <span className="scroll-label">Scroll</span>
+            <ChevronDown size={22} />
           </button>
         </div>
 
