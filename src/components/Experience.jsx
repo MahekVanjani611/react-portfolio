@@ -10,7 +10,7 @@ import neuralLogo from '../assets/neural-logo.jpg';
 // a new logo file under src/assets, and the right badge shows automatically.
 const companyLogos = {
   NVIDIA: nvidiaLogo,
-  NEURAL: neuralLogo
+  "Neural Web": neuralLogo
 };
 
 const CompanyLogo = ({ company }) => {
