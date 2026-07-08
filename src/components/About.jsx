@@ -11,9 +11,12 @@ const About = ({ id, aboutData, personalData }) => {
   const [bodyRef, bodyVisible] = useReveal();
 
   const handleResumeDownload = () => {
-    // Optional: custom download logic
-    console.log('Downloading resume...');
-    alert('Resume download started! (This is a demo)');
+    const link = document.createElement('a');
+    link.href = aboutData.resumeUrl;
+    link.download = 'Mahek-Vanjani-Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (

@@ -128,7 +128,7 @@ export const mockData = {
   about: {
     summary:
       "Passionate software developer with hands-on experience in full-stack web development, Linux kernel optimizations, and machine learning. Skilled in C++, Node.js, React, and Python, with a strong foundation in algorithms, data structures, and system design. Experienced in delivering high-performance, scalable solutions through innovative approaches. Actively contributing to impactful projects while blending creativity with technical expertise. Committed to crafting digital experiences that solve real-world problems efficiently.",
-    resumeUrl: "/MahekCV4.pdf"
+    resumeUrl: "/Mahek-Vanjani-Resume.pdf"
   },
 
   // Internship Experience
