@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="600" height="340">
+  <rect width="600" height="340" fill="#141414"/>
+  <!-- graph/network nodes representing RAG + agent reasoning -->
+  <g stroke="#D9FB06" stroke-width="1.5" opacity="0.55">
+    <line x1="120" y1="120" x2="240" y2="90"/>
+    <line x1="240" y1="90" x2="360" y2="130"/>
+    <line x1="360" y1="130" x2="470" y2="90"/>
+    <line x1="240" y1="90" x2="260" y2="220"/>
+    <line x1="360" y1="130" x2="330" y2="230"/>
+    <line x1="120" y1="120" x2="150" y2="240"/>
+    <line x1="150" y1="240" x2="260" y2="220"/>
+    <line x1="260" y1="220" x2="330" y2="230"/>
+    <line x1="330" y1="230" x2="440" y2="220"/>
+    <line x1="470" y1="90" x2="440" y2="220"/>
+  </g>
+  <g fill="#D9FB06">
+    <circle cx="120" cy="120" r="7"/>
+    <circle cx="240" cy="90" r="9"/>
+    <circle cx="360" cy="130" r="9"/>
+    <circle cx="470" cy="90" r="7"/>
+    <circle cx="260" cy="220" r="7"/>
+    <circle cx="330" cy="230" r="9"/>
+    <circle cx="150" cy="240" r="6"/>
+    <circle cx="440" cy="220" r="6"/>
+  </g>
+  <text x="30" y="40" font-family="monospace" font-size="22" fill="#D9FB06" font-weight="700">RAG · Agent</text>
+  <text x="30" y="310" font-family="monospace" font-size="14" fill="#888">retrieval → reasoning → answer</text>
+</svg>

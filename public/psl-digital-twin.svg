@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="600" height="340">
+  <rect width="600" height="340" fill="#141414"/>
+  <!-- relay / circuit board motif -->
+  <g stroke="#D9FB06" stroke-width="2" fill="none" opacity="0.8">
+    <rect x="180" y="70" width="240" height="150" rx="8"/>
+    <line x1="180" y1="110" x2="140" y2="110"/>
+    <line x1="180" y1="150" x2="140" y2="150"/>
+    <line x1="180" y1="190" x2="140" y2="190"/>
+    <line x1="420" y1="110" x2="460" y2="110"/>
+    <line x1="420" y1="150" x2="460" y2="150"/>
+    <line x1="420" y1="190" x2="460" y2="190"/>
+  </g>
+  <g fill="#D9FB06">
+    <circle cx="140" cy="110" r="4"/>
+    <circle cx="140" cy="150" r="4"/>
+    <circle cx="140" cy="190" r="4"/>
+    <circle cx="460" cy="110" r="4"/>
+    <circle cx="460" cy="150" r="4"/>
+    <circle cx="460" cy="190" r="4"/>
+  </g>
+  <text x="220" y="140" font-family="monospace" font-size="16" fill="#D9FB06" text-anchor="middle">PSL</text>
+  <text x="220" y="165" font-family="monospace" font-size="16" fill="#D9FB06" text-anchor="middle">DIGITAL</text>
+  <text x="220" y="190" font-family="monospace" font-size="16" fill="#D9FB06" text-anchor="middle">TWIN</text>
+  <text x="30" y="40" font-family="monospace" font-size="22" fill="#D9FB06" font-weight="700">Relay Protection</text>
+  <text x="30" y="310" font-family="monospace" font-size="14" fill="#888">PSL logic · trip prediction</text>
+</svg>

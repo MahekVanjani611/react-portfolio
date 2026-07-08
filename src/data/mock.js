@@ -250,6 +250,51 @@ export const mockData = {
       "Kafka-based OHLCV candle aggregation (1-minute windows)",
       "Live auto-updating candlestick dashboard"
     ]
+  },
+  {
+    id: 9,
+    title: "AI Research Agent",
+    description:
+      "An agentic research assistant using a RAG pipeline (ChromaDB vector store + custom document loader) to ground LLM responses in user-uploaded documents and reduce hallucination on domain queries.",
+    techStack: ["Python", "LangGraph", "ChromaDB", "Mem0", "MCP"],
+    demo: "https://airesearcheragent-w5bh289gpcazq2mcah5dwc.streamlit.app/",
+    github: "https://github.com/MahekVanjani611/AIResearcherAgent",
+    image: "/ai-research-agent.svg",
+    highlights: [
+      "LangGraph-based multi-step reasoning workflow (retrieval, synthesis, answer-generation)",
+      "Mem0 integration for persistent cross-session memory",
+      "MCP server exposing agent tools to external LLM clients",
+      "Multi-user auth with isolated per-user chat history"
+    ]
+  },
+  {
+    id: 10,
+    title: "PSL Digital Twin — Transformer Protection Relay",
+    description:
+      "An attention-based Set Transformer that replicates Programmable Scheme Logic (PSL) in protection IEDs using Digital Data Block (DDB) signals and multi-label trip prediction, built as a hardware-independent digital twin of the MiCOM P642 relay.",
+    techStack: ["PyTorch", "Set Transformer", "OCR", "PDF Parsing", "MATLAB/Simulink"],
+    github: "https://github.com/MahekVanjani611/Final_Year_Project6",
+    image: "/psl-digital-twin.svg",
+    highlights: [
+      "Adaptive update framework (DeepDiff) to detect PSL config changes and incrementally fine-tune",
+      "Automated PSL extraction via PDF parsing, OCR, and rule-based processing",
+      "~85% multi-label trip-prediction accuracy"
+    ]
+  },
+  {
+    id: 11,
+    title: "StudyHub — Full-Stack Learning Platform",
+    description:
+      "A full-stack LMS supporting students, instructors, and admins with role-based access control, course creation, quizzes, and a threaded discussion forum, including a Gemini-powered AI study assistant embedded per course.",
+    techStack: ["React", "Node.js", "Express", "MongoDB", "Docker"],
+    demo: "https://study-hub-eight-navy.vercel.app/",
+    github: "https://github.com/MahekVanjani611/StudyHub",
+    image: "/studyhub-logo.png",
+    highlights: [
+      "JWT access/refresh rotation, Google OAuth, email verification & password reset",
+      "Gemini-powered AI study assistant, context-aware per course",
+      "Automated PDF certificates and XP-based gamification (streaks, badges, leaderboard)"
+    ]
   }
 
 
