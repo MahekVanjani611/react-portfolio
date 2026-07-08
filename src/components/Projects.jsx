@@ -233,6 +233,15 @@ const Projects = ({ id, projectsData }) => {
   const openProjectModal = (project) => setSelectedProject(project);
   const closeProjectModal = () => setSelectedProject(null);
 
+  // Show projects with a live demo first, and within each group show the
+  // most recently added projects first (higher id = added more recently).
+  const sortedProjects = [...projectsData].sort((a, b) => {
+    const aHasDemo = a.demo && a.demo.trim() !== "" ? 0 : 1;
+    const bHasDemo = b.demo && b.demo.trim() !== "" ? 0 : 1;
+    if (aHasDemo !== bHasDemo) return aHasDemo - bHasDemo;
+    return b.id - a.id;
+  });
+
   return (
     <section id={id} className="projects-section">
       <div className="section-container">
@@ -247,7 +256,7 @@ const Projects = ({ id, projectsData }) => {
 
         {/* All Projects */}
         <div ref={gridRef} className={`projects-grid reveal ${gridVisible ? 'reveal-visible' : ''}`}>
-          {projectsData.map((project, index) => (
+          {sortedProjects.map((project, index) => (
             <Card key={index} className="project-card">
               <div className="project-image">
                 <img
